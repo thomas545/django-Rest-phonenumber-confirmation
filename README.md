@@ -67,3 +67,7 @@ Payload:
 Method: `POST`  
 Endpoint: `/resend/<int:phonenumber_id>/confirmation/`  
 Param : phonenumber_id = phone number object id
+
+
+### PYPI
+ - [PYPI](https://pypi.org/project/django-Rest-phonenumber-confirmation/)

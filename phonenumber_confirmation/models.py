@@ -97,19 +97,19 @@ class PhoneNumberConfirmation(models.Model):
             self.pin = new_pin
             self.save()
 
-        #     try:
-        #         twilio_client = Client(settings.TWILIO_ACCOUNT_SID,
-        #                                settings.TWILIO_AUTH_TOKEN)
-        #         twilio_client.messages.create(
-        #             body="Your activation pin is %s" % self.pin,
-        #             to=str(self.phone_number.phone),
-        #             from_=settings.TWILIO_FROM_NUMBER)
-        #         self.sent = timezone.now()
-        #         self.save()
-        #     except TwilioRestException as e:
-        #         raise ValueError(e)
-        # else:
-        #     return PermissionError("Previous PIN not expired")
+            try:
+                twilio_client = Client(settings.TWILIO_ACCOUNT_SID,
+                                       settings.TWILIO_AUTH_TOKEN)
+                twilio_client.messages.create(
+                    body="Your activation pin is %s" % self.pin,
+                    to=str(self.phone_number.phone),
+                    from_=settings.TWILIO_FROM_NUMBER)
+                self.sent = timezone.now()
+                self.save()
+            except TwilioRestException as e:
+                raise ValueError(e)
+        else:
+            return PermissionError("Previous PIN not expired")
 
         return self.pin
 

@@ -9,7 +9,7 @@ README = open(os.path.join(here, 'README.md')).read()
 
 setup(
     name='django-Rest-phonenumber-confirmation',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     description='Phone number confirmation',
     long_description=README,

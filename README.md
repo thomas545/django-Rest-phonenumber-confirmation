@@ -2,7 +2,7 @@
 - A Django library for phone number confirmation with twilio with phone number validation 
 
 ### Quickstart
-For installing django-drf-auth, just run this command in your shell
+For installing django-Rest-phonenumber-confirmation, just run this command in your shell
 
 ```
 pip install django-Rest-phonenumber-confirmation
